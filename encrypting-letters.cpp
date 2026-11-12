@@ -38,19 +38,23 @@ int main()
     while(true)
     {
         std::string word;
-        std::cout << "Word: ";
+        std::cout << "\nWord(/0 to quit): ";
         std::cin >> word;
-
+        if(word == "/0")
+        {
+            break;
+        }
         std::vector<std::pair<char,int>> letterFrequency = get_frequency(word);
 
-        for(auto _ : letterFrequency)
-        {
-            std::cout<< _.first << ":" << _.second << std::endl;
-        }
+        // for(auto _ : letterFrequency)
+        // {
+        //     std::cout<< _.first << ":" << _.second << std::endl;
+        // }
 
         std::string encryptedCode = huffman_encoding(letterFrequency, word);
         std::cout<< encryptedCode;
     }
+
     return 0;
 }
 
