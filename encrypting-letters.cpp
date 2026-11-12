@@ -35,19 +35,22 @@ void dfs(Node* root, std::string currentCode,std::unordered_map<char,std::string
 
 int main()
 {
-    std::string word;
-    std::cout << "Word: ";
-    std::cin >> word;
-
-    std::vector<std::pair<char,int>> letterFrequency = get_frequency(word);
-
-    for(auto _ : letterFrequency)
+    while(true)
     {
-        std::cout<< _.first << ":" << _.second << std::endl;
-    }
+        std::string word;
+        std::cout << "Word: ";
+        std::cin >> word;
 
-    std::string encryptedCode = huffman_encoding(letterFrequency, word);
-    std::cout<< encryptedCode;
+        std::vector<std::pair<char,int>> letterFrequency = get_frequency(word);
+
+        for(auto _ : letterFrequency)
+        {
+            std::cout<< _.first << ":" << _.second << std::endl;
+        }
+
+        std::string encryptedCode = huffman_encoding(letterFrequency, word);
+        std::cout<< encryptedCode;
+    }
     return 0;
 }
 
